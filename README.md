@@ -1,2 +1,3 @@
-# devops24
-plan de estudio de 24 meses
+# DevOps Multicloud - Plan de Estudios 24 Meses
+
+Este repositorio contiene el plan de estudios detallado para adquirir competencias avanzadas en DevOps Multicloud durante 24 meses...
