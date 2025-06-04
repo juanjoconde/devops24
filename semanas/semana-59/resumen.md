@@ -1,7 +1,15 @@
 # Semana 59 - Resumen
 
-## Temas y Herramientas
-...
+## Fase
+Kubernetes Core + Helm
 
-## Objetivo Semanal
-...
+## Objetivo
+Profundizar en Kubernetes Core + Helm
+
+## Temas
+- Pods, servicios, despliegues, ingress, Helm charts, upgrades
+
+## Recursos recomendados
+- [Kubernetes by Example](https://kubernetesbyexample.com/)
+- [Kubernetes Docs](https://kubernetes.io/docs/home/)
+- [Helm Docs](https://helm.sh/docs/)

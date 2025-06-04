@@ -1,8 +1,10 @@
-name: DevOps Multicloud 24M
-version: 1.0
-description: Kanban de seguimiento para el plan de estudios DevOps Multicloud
-
+name: DevOps Multicloud Plan
+description: Seguimiento semanal del plan de estudios DevOps (104 semanas)
+owner: juanjoconde
+template: basic_kanban
 columns:
-  - name: 📘 To Do
-  - name: 🛠 In Progress
-  - name: ✅ Done
+  - name: 📅 Semana Actual
+  - name: 🛠 En curso
+  - name: ⏳ En revisión
+  - name: ✅ Completado
+  - name: 📝 Retroalimentación
