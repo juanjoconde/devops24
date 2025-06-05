@@ -282,7 +282,10 @@ def crear_archivos_semana(base_path, semana, bloque):
         f.write("## 🔁 Retrospectiva\n- ¿Qué funcionó bien?\n- ¿Qué mejorarías para la próxima semana?\n- ¿Qué dudas persisten?\n- ¿Cómo aplicarías lo aprendido en un entorno real?\n")
 
 if __name__ == "__main__":
-    base_path = os.path.join(os.getcwd(), "semanas")
+    # Create the weeks folder relative to this script's location so the
+    # script behaves consistently no matter from where it is executed.
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    base_path = os.path.join(script_dir, "semanas")
     os.makedirs(base_path, exist_ok=True)
     for semana in range(1, 105):
         bloque = get_block(semana)
