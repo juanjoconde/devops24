@@ -6,7 +6,7 @@ Bienvenido al repositorio del **Plan de Estudios DevOps Multicloud**, diseñado 
 
 ## 📅 Plan General de Estudios
 
-Consulta el detalle completo de las 104 semanas en [plan_general.md](plan_general.md).
+Consulta el detalle completo de las 104 semanas en [mapa.md](mapa.md).
 
 | Semana | Fase | Objetivo | Temas |
 |--------|------|----------|-------|
@@ -100,7 +100,7 @@ Consulta el detalle completo de las 104 semanas en [plan_general.md](plan_genera
 | 88 | Testing Automatizado (unit, int, e2e) | Profundizar en Testing Automatizado (unit, int, e2e) | Testing Automatizado (unit, int, e2e) - Semana 4 |
 | 89-104 | Proyecto Final + Publicación GitHub | Profundizar en Proyecto Final + Publicación GitHub | Proyecto Final + Publicación GitHub - Semana 1-16 |
 
-> **Nota:** El detalle completo de cada semana está disponible en el archivo [plan_general.md](plan_general.md).
+> **Nota:** El detalle completo de cada semana está disponible en el archivo [mapa.md](mapa.md).
 
 ---
 
@@ -118,7 +118,7 @@ Consulta el detalle completo de las 104 semanas en [plan_general.md](plan_genera
 │   └── ...
 ├── docs/
 │   └── mapa_mental.png
-├── plan_general.md
+├── mapa.md
 └── README.md
 ```
 
@@ -186,7 +186,7 @@ Consulta el detalle completo de las 104 semanas en [plan_general.md](plan_genera
 2. Crea ramas individuales por integrante.
 3. Usa los templates semanales para tareas y entregas.
 4. Registra avances y dificultades en issues.
-5. Consulta el [plan_general.md](plan_general.md) para el detalle de cada semana.
+5. Consulta [mapa.md](mapa.md) para el detalle de cada semana.
 
 ---
 
