@@ -4,120 +4,263 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plan DevOps Multicloud</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
+    :root {
+      --primary-gradient: linear-gradient(90deg, #00c9ff, #92fe9d);
+      --secondary-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --header-bg: rgba(0, 0, 0, 0.5);
+      --accent-color: #92fe9d;
+      --text-color: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #fff;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--secondary-gradient);
+      color: var(--text-color);
+      line-height: 1.6;
     }
+
     header {
-      background: rgba(0, 0, 0, 0.3);
+      background: var(--header-bg);
+      backdrop-filter: blur(10px);
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      position: sticky;
+      position: fixed;
+      width: 100%;
       top: 0;
       z-index: 999;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     }
+
     header h1 {
       font-size: 1.5rem;
-      color: #92fe9d;
+      color: var(--accent-color);
       margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
+
     header a {
-      background: linear-gradient(90deg, #00c9ff, #92fe9d);
+      background: var(--primary-gradient);
       color: #000;
       text-decoration: none;
-      padding: 0.5rem 1rem;
+      padding: 0.75rem 1.5rem;
       border-radius: 8px;
-      font-weight: bold;
-      transition: background 0.3s ease;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
+
     header a:hover {
-      background: linear-gradient(90deg, #92fe9d, #00c9ff);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 201, 255, 0.3);
     }
+
     main {
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 2rem;
+      padding: 7rem 2rem 2rem;
     }
+
     .hero {
       text-align: center;
-      padding: 4rem 0;
+      padding: 3rem 0 5rem;
     }
+
     .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      background: linear-gradient(90deg, #00c9ff, #92fe9d);
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      background: var(--primary-gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      line-height: 1.2;
     }
+
     .hero p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto 2rem;
+      font-size: 1.25rem;
+      max-width: 800px;
+      margin: 0 auto;
+      color: rgba(255, 255, 255, 0.9);
     }
+
     .section {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 16px;
-      padding: 2rem;
-      margin-bottom: 2rem;
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 3rem;
+      margin-bottom: 3rem;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
+
     .section h3 {
-      color: #92fe9d;
-      margin-top: 0;
+      color: var(--accent-color);
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      position: relative;
+      padding-bottom: 0.5rem;
     }
+
+    .section h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--primary-gradient);
+      border-radius: 2px;
+    }
+
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
     }
+
     .card {
       background: rgba(0, 0, 0, 0.2);
-      border-radius: 8px;
-      padding: 1.5rem;
-      transition: transform 0.3s ease;
+      border-radius: 16px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
+
     .card:hover {
       transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      border-color: var(--accent-color);
     }
+
+    .card h4 {
+      color: #fff;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1rem;
+      flex-grow: 1;
+    }
+
     .mindmap-container {
       width: 100%;
       height: 800px;
       border: none;
-      border-radius: 16px;
+      border-radius: 20px;
       margin: 2rem 0;
       background: white;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     }
+
     .button {
-      display: inline-block;
-      background: linear-gradient(90deg, #00c9ff, #92fe9d);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--primary-gradient);
       color: #000;
       text-decoration: none;
       padding: 0.8rem 1.5rem;
       border-radius: 8px;
-      font-weight: bold;
-      margin: 1rem 0;
-      transition: transform 0.3s ease;
+      font-weight: 600;
+      transition: all 0.3s ease;
     }
+
     .button:hover {
       transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 201, 255, 0.3);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .stat-card {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .stat-card h4 {
+      font-size: 2.5rem;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-card p {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2.5rem;
+      }
+      
+      .section {
+        padding: 2rem;
+      }
+      
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .stats {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>DevOps Multicloud</h1>
-    <a href="https://github.com/juanjoconde/plan" target="_blank">Ver Repositorio</a>
+    <h1><i class="fas fa-cloud"></i> DevOps Multicloud</h1>
+    <a href="https://github.com/juanjoconde/plan" target="_blank">
+      <i class="fab fa-github"></i> Ver Repositorio
+    </a>
   </header>
   
   <main>
     <section class="hero">
       <h2>Plan de Estudios DevOps Multicloud</h2>
       <p>Un camino estructurado de 104 semanas para dominar AWS, Azure, CI/CD, Kubernetes, Terraform y más. Diseñado para convertirte en un experto DevOps multicloud.</p>
+      
+      <div class="stats">
+        <div class="stat-card">
+          <h4>104</h4>
+          <p>Semanas de Aprendizaje</p>
+        </div>
+        <div class="stat-card">
+          <h4>14</h4>
+          <p>Módulos Especializados</p>
+        </div>
+        <div class="stat-card">
+          <h4>5+</h4>
+          <p>Certificaciones Objetivo</p>
+        </div>
+      </div>
     </section>
 
     <section class="section">
@@ -129,19 +272,29 @@
       <h3>Certificaciones Objetivo</h3>
       <div class="grid">
         <div class="card">
+          <i class="fab fa-microsoft fa-2x" style="color: var(--accent-color)"></i>
           <h4>Azure Administrator Associate (AZ-104)</h4>
+          <p>Administración avanzada de recursos en Azure</p>
         </div>
         <div class="card">
+          <i class="fas fa-building fa-2x" style="color: var(--accent-color)"></i>
           <h4>Azure Solutions Architect Expert (AZ-305)</h4>
+          <p>Diseño de soluciones empresariales en Azure</p>
         </div>
         <div class="card">
+          <i class="fas fa-code-branch fa-2x" style="color: var(--accent-color)"></i>
           <h4>Terraform Associate</h4>
+          <p>Infraestructura como código con Terraform</p>
         </div>
         <div class="card">
+          <i class="fab fa-docker fa-2x" style="color: var(--accent-color)"></i>
           <h4>Docker Certified Associate</h4>
+          <p>Contenerización y gestión de imágenes</p>
         </div>
         <div class="card">
+          <i class="fas fa-dharmachakra fa-2x" style="color: var(--accent-color)"></i>
           <h4>KCNA</h4>
+          <p>Fundamentos de Kubernetes y Cloud Native</p>
         </div>
       </div>
     </section>
@@ -150,16 +303,19 @@
       <h3>Roles Sugeridos</h3>
       <div class="grid">
         <div class="card">
+          <i class="fas fa-server fa-2x" style="color: var(--accent-color)"></i>
           <h4>Infraestructura</h4>
-          <p>Especialización en Terraform, redes, seguridad cloud</p>
+          <p>Especialización en Terraform, redes, seguridad cloud y arquitectura de sistemas distribuidos</p>
         </div>
         <div class="card">
+          <i class="fas fa-code fa-2x" style="color: var(--accent-color)"></i>
           <h4>CI/CD</h4>
-          <p>Especialización en GitHub Actions, Jenkins, testing automatizado</p>
+          <p>Especialización en GitHub Actions, Jenkins, testing automatizado y pipelines de despliegue</p>
         </div>
         <div class="card">
+          <i class="fas fa-chart-line fa-2x" style="color: var(--accent-color)"></i>
           <h4>Observabilidad</h4>
-          <p>Especialización en Prometheus, Grafana, alertas y dashboards</p>
+          <p>Especialización en Prometheus, Grafana, alertas, dashboards y monitoreo de sistemas</p>
         </div>
       </div>
     </section>
@@ -168,20 +324,36 @@
       <h3>Recursos Complementarios</h3>
       <div class="grid">
         <div class="card">
+          <i class="fab fa-microsoft fa-2x" style="color: var(--accent-color)"></i>
           <h4>Microsoft Learn AZ-104</h4>
-          <a href="https://learn.microsoft.com/en-us/certifications/exams/az-104/" class="button" target="_blank">Acceder</a>
+          <p>Ruta de aprendizaje oficial para la certificación Azure Administrator</p>
+          <a href="https://learn.microsoft.com/en-us/certifications/exams/az-104/" class="button" target="_blank">
+            <i class="fas fa-external-link-alt"></i> Acceder
+          </a>
         </div>
         <div class="card">
+          <i class="fab fa-aws fa-2x" style="color: var(--accent-color)"></i>
           <h4>AWS Workshops</h4>
-          <a href="https://workshops.aws/" class="button" target="_blank">Acceder</a>
+          <p>Talleres prácticos para desarrollar habilidades en AWS</p>
+          <a href="https://workshops.aws/" class="button" target="_blank">
+            <i class="fas fa-external-link-alt"></i> Acceder
+          </a>
         </div>
         <div class="card">
+          <i class="fab fa-github fa-2x" style="color: var(--accent-color)"></i>
           <h4>GitHub Actions Docs</h4>
-          <a href="https://docs.github.com/en/actions" class="button" target="_blank">Acceder</a>
+          <p>Documentación oficial para automatización con GitHub Actions</p>
+          <a href="https://docs.github.com/en/actions" class="button" target="_blank">
+            <i class="fas fa-external-link-alt"></i> Acceder
+          </a>
         </div>
         <div class="card">
+          <i class="fas fa-dharmachakra fa-2x" style="color: var(--accent-color)"></i>
           <h4>Kubernetes by Example</h4>
-          <a href="https://kubernetesbyexample.com/" class="button" target="_blank">Acceder</a>
+          <p>Aprende Kubernetes a través de ejemplos prácticos</p>
+          <a href="https://kubernetesbyexample.com/" class="button" target="_blank">
+            <i class="fas fa-external-link-alt"></i> Acceder
+          </a>
         </div>
       </div>
     </section>
